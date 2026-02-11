@@ -82,6 +82,25 @@ Where possible, we use bulk operations (like adding jobs to the queue in batches
 
 ---
 
+## Deployment
+
+Since we’re running a monorepo (both client and server in one repo), we deploy them as two separate services. Here is the configuration we use (e.g., for Render):
+
+### Server
+*   **Root Directory**: `server`
+*   **Build Command**: `yarn && yarn build`
+    *   *Note:* We must run `yarn build` to compile the TypeScript code into the `dist` folder.
+*   **Start Command**: `yarn start`
+*   **Environment Variables**: Ensure `MONGODB_URI`, `REDIS_URL`, etc., are set.
+
+### Client
+*   **Root Directory**: `client`
+*   **Build Command**: `yarn && yarn build`
+*   **Start Command**: `yarn start`
+*   **Environment Variables**: `NEXT_PUBLIC_API_URL` should point to the live server URL.
+
+---
+
 ## Stack
 
 *   **Next.js**: Handles the dashboard. Key for us here was the ecosystem and how quickly we can build UI with Tailwind.
