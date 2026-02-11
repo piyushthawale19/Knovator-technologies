@@ -31,7 +31,7 @@ graph TD
 
 We are using MongoDB for its flexibility with unstructured data, which is helpful given the variability in XML feeds.
 
-### `jobs` Collection
+### `jobs` Collectiongit
 This stores the normalized job data. We use the `guid` as a unique identifier to handle upserts (insert if new, update if exists).
 
 ```typescript
