@@ -88,15 +88,15 @@ Since we’re running a monorepo (both client and server in one repo), we deploy
 
 ### Server
 *   **Root Directory**: `server`
-*   **Build Command**: `yarn && yarn build`
-    *   *Note:* We must run `yarn build` to compile the TypeScript code into the `dist` folder.
-*   **Start Command**: `yarn start`
+*   **Build Command**: `npm install && npm run build`
+    *   *Note:* We must run `npm run build` to compile the TypeScript code into the `dist` folder.
+*   **Start Command**: `npm start`
 *   **Environment Variables**: Ensure `MONGODB_URI`, `REDIS_URL`, etc., are set.
 
 ### Client
 *   **Root Directory**: `client`
-*   **Build Command**: `yarn && yarn build`
-*   **Start Command**: `yarn start`
+*   **Build Command**: `npm install && npm run build`
+*   **Start Command**: `npm start`
 *   **Environment Variables**: `NEXT_PUBLIC_API_URL` should point to the live server URL.
 
 ---
