@@ -22,6 +22,7 @@ export function createApp() {
                 if (allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
                     callback(null, true)
                 } else {
+                    console.log(`[CORS Blocked] Origin: ${origin}`)
                     callback(new Error('Not allowed by CORS'))
                 }
             },
